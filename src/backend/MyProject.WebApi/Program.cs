@@ -2,6 +2,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.HttpOverrides;
 using MyProject.Infrastructure.Features.Authentication.Extensions;
+using MyProject.Infrastructure.Features.EventSourcing.Extensions;
 using MyProject.Infrastructure.Persistence.Extensions;
 using MyProject.Infrastructure.Caching.Extensions;
 using MyProject.Infrastructure.Cookies.Extensions;
@@ -46,6 +47,9 @@ try
 
         Log.Debug("Adding cookie services");
         builder.Services.AddCookieServices();
+
+        Log.Debug("Adding event sourcing");
+        builder.Services.AddEventSourcing();
     }
     catch (Exception ex)
     {

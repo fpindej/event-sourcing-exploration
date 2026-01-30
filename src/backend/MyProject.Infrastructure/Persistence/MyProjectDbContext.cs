@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MyProject.Infrastructure.Features.Authentication.Models;
+using MyProject.Infrastructure.Features.EventSourcing.Models;
 using MyProject.Infrastructure.Persistence.Extensions;
 
 namespace MyProject.Infrastructure.Persistence;
@@ -9,6 +10,7 @@ internal class MyProjectDbContext(DbContextOptions<MyProjectDbContext> options)
     : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>(options)
 {
     public DbSet<RefreshToken> RefreshTokens { get; set; }
+    public DbSet<EventStoreEntry> EventStore { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

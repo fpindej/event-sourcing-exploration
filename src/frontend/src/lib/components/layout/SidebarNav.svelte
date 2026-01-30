@@ -3,7 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { cn } from '$lib/utils';
 	import { buttonVariants } from '$lib/components/ui/button';
-	import { LayoutDashboard, ChartPie, FileText, type IconProps } from '@lucide/svelte';
+	import { LayoutDashboard, ChartPie, FileText, Database, type IconProps } from '@lucide/svelte';
 	import * as m from '$lib/paraglide/messages';
 	import * as Tooltip from '$lib/components/ui/tooltip';
 	import type { Component } from 'svelte';
@@ -20,6 +20,11 @@
 			title: m.nav_dashboard,
 			href: resolve('/'),
 			icon: LayoutDashboard
+		},
+		{
+			title: () => 'Event Sourcing',
+			href: resolve('/event-sourcing'),
+			icon: Database
 		},
 		{
 			title: m.nav_analytics,

@@ -3,17 +3,20 @@ using System;
 using EventSourcingExploration.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace EventSourcingExploration.Infrastructure.Persistence.Migrations
+namespace EventSourcingExploration.Infrastructure.Features.Postgres.Migrations
 {
     [DbContext(typeof(EventSourcingExplorationDbContext))]
-    partial class EventSourcingExplorationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260130230405_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
